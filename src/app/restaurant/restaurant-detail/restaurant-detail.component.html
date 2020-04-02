@@ -1,0 +1,23 @@
+<ActionBar title="{{restaurant.name}}"></ActionBar>
+
+<FlexboxLayout flexDirection="column">
+
+    <Button class="btn btn-primary" text="Add an Item" [nsRouterLink]="['/addItem', restaurant.id]" (tap)="alert()"></Button>
+
+    <CardView *ngFor="let item of restaurant.menuItems" class="card" elevation="40" radius="10" ios:shadowRadius="3">
+        <StackLayout>
+            <Label class="h2" [text]="item.sentenceForm"></Label>
+        </StackLayout>
+    </CardView>
+
+</FlexboxLayout>
+
+<!-- <FlexboxLayout flexDirection="column">
+    <FlexboxLayout class="m-15">
+            <ng-template let-item="restaurant.menuItems">
+                <Label class="h2">This</Label>
+            </ng-template>
+        <Label class="h2" [text]="item.id + '. '"></Label>
+        <Label class="h2" [text]="item.name"></Label>
+    </FlexboxLayout>
+</FlexboxLayout> -->

@@ -1,0 +1,15 @@
+<!-- <ActionBar title="{{restaurant.name}}"></ActionBar> -->
+
+<FlexboxLayout flexDirection="column">
+    <ListPicker [items]="people" textField="name" selectedIndex="0" (selectedIndexChange)="onPersonChanged($event)"></ListPicker>
+
+
+    <ListPicker [items]="opinions" textField="name" selectedIndex="0" (selectedIndexChange)="onOpinionChanged($event)"></ListPicker>
+    <!-- <Label [text]="likedIt ? 'likes the' : 'does not like the'"></Label>
+    <Switch checked="false" (checkedChange)="onCheckedChange($event)"></Switch> -->
+
+
+    <TextField [(ngModel)]="itemName" hint="Enter text..."></TextField>
+
+    <Button text="Add" class="btn btn-primary" (tap)="submit()"></Button>
+</FlexboxLayout>
